@@ -68,6 +68,8 @@ class UserController extends Controller
             'sofyan',
             'plop'
         );
+
+        ##ici une requete sera ecrite 
         
     }
 
