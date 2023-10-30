@@ -72,7 +72,7 @@ class UserController extends Controller
         ##ici une requete sera ecrite 
         ##petit essai
     }
-
+    
 }
 
 ?>
