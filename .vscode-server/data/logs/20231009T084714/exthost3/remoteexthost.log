@@ -1,0 +1,12 @@
+2023-10-09 09:32:17.864 [info] Extension host with pid 3522910 started
+2023-10-09 09:32:17.984 [info] Lock '/home/sofyan/.vscode-server/data/User/workspaceStorage/dc876debb397f3f61920b899333819c3/vscode.lock': Lock acquired.
+2023-10-09 09:32:18.121 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2023-10-09 09:32:18.461 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*'
+2023-10-09 09:32:18.527 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2023-10-09 09:32:18.865 [info] Eager extensions activated
+2023-10-09 09:32:18.868 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2023-10-09 09:32:18.870 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2023-10-09 09:32:20.297 [info] ExtensionService#_doActivateExtension vscode.git, startup: false, activationEvent: 'api', root cause: vscode.github
+2023-10-09 09:32:36.086 [info] Extension host terminating: received terminate message from renderer
+2023-10-09 09:32:36.092 [info] Lock '/home/sofyan/.vscode-server/data/User/workspaceStorage/dc876debb397f3f61920b899333819c3/vscode.lock': Marking the lockfile as scheduled to be released in 6000 ms.
+2023-10-09 09:32:36.147 [info] Extension host with pid 3522910 exiting with code 0

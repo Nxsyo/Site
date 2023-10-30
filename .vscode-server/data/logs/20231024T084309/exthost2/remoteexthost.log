@@ -1,0 +1,18 @@
+2023-10-24 11:08:48.641 [info] Extension host with pid 3798195 started
+2023-10-24 11:08:48.673 [error] Error: EEXIST: file already exists, open '/home/sofyan/.vscode-server/data/User/workspaceStorage/dc876debb397f3f61920b899333819c3/vscode.lock'
+2023-10-24 11:08:48.698 [info] Lock '/home/sofyan/.vscode-server/data/User/workspaceStorage/dc876debb397f3f61920b899333819c3/vscode.lock': Could not acquire lock, checking if the file is stale.
+2023-10-24 11:08:48.828 [info] Lock '/home/sofyan/.vscode-server/data/User/workspaceStorage/dc876debb397f3f61920b899333819c3/vscode.lock': The lock does not look stale, elapsed: 179 ms, giving up.
+2023-10-24 11:08:48.987 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2023-10-24 11:08:48.992 [info] ExtensionService#_doActivateExtension vscode.php-language-features, startup: false, activationEvent: 'onLanguage:php'
+2023-10-24 11:08:49.245 [info] Lock '/home/sofyan/.vscode-server/data/User/workspaceStorage/dc876debb397f3f61920b899333819c3-1/vscode.lock': Lock acquired.
+2023-10-24 11:08:49.563 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2023-10-24 11:08:49.655 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2023-10-24 11:08:49.660 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2023-10-24 11:08:51.126 [info] Eager extensions activated
+2023-10-24 11:08:51.127 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2023-10-24 11:08:51.129 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2023-10-24 11:24:45.440 [info] ExtensionService#_doActivateExtension vscode.html-language-features, startup: false, activationEvent: 'onLanguage:html'
+2023-10-24 12:03:03.511 [info] ExtensionService#_doActivateExtension vscode.css-language-features, startup: false, activationEvent: 'onLanguage:css'
+2023-10-24 12:27:34.390 [info] Extension host terminating: received terminate message from renderer
+2023-10-24 12:27:34.394 [info] Lock '/home/sofyan/.vscode-server/data/User/workspaceStorage/dc876debb397f3f61920b899333819c3-1/vscode.lock': Marking the lockfile as scheduled to be released in 6000 ms.
+2023-10-24 12:27:34.524 [info] Extension host with pid 3798195 exiting with code 0

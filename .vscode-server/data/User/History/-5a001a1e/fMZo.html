@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+</header>
+    <title>Table Département</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
+</header>
+
+<body>
+    <h1>
+        Coucou
+    </h1>
+    <h3>
+        Listes département :
+    </h3>
+
+    <table border= 5>
+        <tr>
+            <th>
+                Nom du departement 
+            </th>
+        </tr>
+        <tr >
+            <td>
+                {% for depart in departs %}
+                <li>{{ depart.departement_nom }}</li>
+            {%endfor%}
+            </td>
+        </tr>
+    </table>
+</body>

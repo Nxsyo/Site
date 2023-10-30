@@ -1,0 +1,104 @@
+2023-10-09 12:29:15.658 [info] 
+
+
+
+
+2023-10-09 12:29:15.721 [info] Extension host agent started.
+2023-10-09 12:29:15.948 [info] [127.0.0.1][db27df53][ManagementConnection] New connection established.
+2023-10-09 12:29:15.960 [info] [127.0.0.1][9dd5eb96][ExtensionHostConnection] New connection established.
+2023-10-09 12:29:16.354 [info] [127.0.0.1][9dd5eb96][ExtensionHostConnection] <3525218> Launched Extension Host Process.
+2023-10-09 12:29:23.688 [error] CodeExpectedError: Could not find pty on pty host
+    at A.U (/home/sofyan/.vscode-server/bin/e7e037083ff4455cf320e344325dacb480062c3c/out/vs/platform/terminal/node/ptyHostMain.js:44:32246)
+    at A.updateTitle (/home/sofyan/.vscode-server/bin/e7e037083ff4455cf320e344325dacb480062c3c/out/vs/platform/terminal/node/ptyHostMain.js:44:27446)
+    at V.<computed> (/home/sofyan/.vscode-server/bin/e7e037083ff4455cf320e344325dacb480062c3c/out/vs/platform/terminal/node/ptyHostMain.js:44:22715)
+    at Object.call (/home/sofyan/.vscode-server/bin/e7e037083ff4455cf320e344325dacb480062c3c/out/vs/platform/terminal/node/ptyHostMain.js:34:5059)
+    at h.s (/home/sofyan/.vscode-server/bin/e7e037083ff4455cf320e344325dacb480062c3c/out/vs/platform/terminal/node/ptyHostMain.js:32:5150)
+    at h.q (/home/sofyan/.vscode-server/bin/e7e037083ff4455cf320e344325dacb480062c3c/out/vs/platform/terminal/node/ptyHostMain.js:32:4661)
+    at g.value (/home/sofyan/.vscode-server/bin/e7e037083ff4455cf320e344325dacb480062c3c/out/vs/platform/terminal/node/ptyHostMain.js:32:4066)
+    at n.z (/home/sofyan/.vscode-server/bin/e7e037083ff4455cf320e344325dacb480062c3c/out/vs/platform/terminal/node/ptyHostMain.js:27:1902)
+    at n.fire (/home/sofyan/.vscode-server/bin/e7e037083ff4455cf320e344325dacb480062c3c/out/vs/platform/terminal/node/ptyHostMain.js:27:2119)
+    at process.he (/home/sofyan/.vscode-server/bin/e7e037083ff4455cf320e344325dacb480062c3c/out/vs/platform/terminal/node/ptyHostMain.js:25:9949)
+    at process.emit (node:events:513:28)
+    at emit (node:internal/child_process:937:14)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+2023-10-09 12:29:23.703 [error] CodeExpectedError: Could not find pty on pty host
+    at A.U (/home/sofyan/.vscode-server/bin/e7e037083ff4455cf320e344325dacb480062c3c/out/vs/platform/terminal/node/ptyHostMain.js:44:32246)
+    at A.updateIcon (/home/sofyan/.vscode-server/bin/e7e037083ff4455cf320e344325dacb480062c3c/out/vs/platform/terminal/node/ptyHostMain.js:44:27496)
+    at V.<computed> (/home/sofyan/.vscode-server/bin/e7e037083ff4455cf320e344325dacb480062c3c/out/vs/platform/terminal/node/ptyHostMain.js:44:22715)
+    at Object.call (/home/sofyan/.vscode-server/bin/e7e037083ff4455cf320e344325dacb480062c3c/out/vs/platform/terminal/node/ptyHostMain.js:34:5059)
+    at h.s (/home/sofyan/.vscode-server/bin/e7e037083ff4455cf320e344325dacb480062c3c/out/vs/platform/terminal/node/ptyHostMain.js:32:5150)
+    at h.q (/home/sofyan/.vscode-server/bin/e7e037083ff4455cf320e344325dacb480062c3c/out/vs/platform/terminal/node/ptyHostMain.js:32:4661)
+    at g.value (/home/sofyan/.vscode-server/bin/e7e037083ff4455cf320e344325dacb480062c3c/out/vs/platform/terminal/node/ptyHostMain.js:32:4066)
+    at n.z (/home/sofyan/.vscode-server/bin/e7e037083ff4455cf320e344325dacb480062c3c/out/vs/platform/terminal/node/ptyHostMain.js:27:1902)
+    at n.fire (/home/sofyan/.vscode-server/bin/e7e037083ff4455cf320e344325dacb480062c3c/out/vs/platform/terminal/node/ptyHostMain.js:27:2119)
+    at process.he (/home/sofyan/.vscode-server/bin/e7e037083ff4455cf320e344325dacb480062c3c/out/vs/platform/terminal/node/ptyHostMain.js:25:9949)
+    at process.emit (node:events:513:28)
+    at emit (node:internal/child_process:937:14)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+2023-10-09 12:29:33.209 [info] [127.0.0.1][db27df53][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+2023-10-09 12:29:33.309 [info] [127.0.0.1][9dd5eb96][ExtensionHostConnection] <3525218> Extension Host Process exited with code: 0, signal: null.
+2023-10-09 12:29:33.311 [info] Cancelling previous shutdown timeout
+2023-10-09 12:29:33.311 [info] Last EH closed, waiting before shutting down
+2023-10-09 12:29:37.864 [info] Got delay-shutdown request while in shutdown timeout, delaying
+2023-10-09 12:29:37.864 [info] Cancelling previous shutdown timeout
+2023-10-09 12:29:38.083 [info] [127.0.0.1][432873a2][ManagementConnection] New connection established.
+2023-10-09 12:29:38.123 [info] [127.0.0.1][5a18fe62][ExtensionHostConnection] New connection established.
+2023-10-09 12:29:38.151 [info] [127.0.0.1][5a18fe62][ExtensionHostConnection] <3525326> Launched Extension Host Process.
+2023-10-09 12:29:40.785 [error] CodeExpectedError: Could not find pty on pty host
+    at A.U (/home/sofyan/.vscode-server/bin/e7e037083ff4455cf320e344325dacb480062c3c/out/vs/platform/terminal/node/ptyHostMain.js:44:32246)
+    at A.updateTitle (/home/sofyan/.vscode-server/bin/e7e037083ff4455cf320e344325dacb480062c3c/out/vs/platform/terminal/node/ptyHostMain.js:44:27446)
+    at V.<computed> (/home/sofyan/.vscode-server/bin/e7e037083ff4455cf320e344325dacb480062c3c/out/vs/platform/terminal/node/ptyHostMain.js:44:22715)
+    at Object.call (/home/sofyan/.vscode-server/bin/e7e037083ff4455cf320e344325dacb480062c3c/out/vs/platform/terminal/node/ptyHostMain.js:34:5059)
+    at h.s (/home/sofyan/.vscode-server/bin/e7e037083ff4455cf320e344325dacb480062c3c/out/vs/platform/terminal/node/ptyHostMain.js:32:5150)
+    at h.q (/home/sofyan/.vscode-server/bin/e7e037083ff4455cf320e344325dacb480062c3c/out/vs/platform/terminal/node/ptyHostMain.js:32:4661)
+    at g.value (/home/sofyan/.vscode-server/bin/e7e037083ff4455cf320e344325dacb480062c3c/out/vs/platform/terminal/node/ptyHostMain.js:32:4066)
+    at n.z (/home/sofyan/.vscode-server/bin/e7e037083ff4455cf320e344325dacb480062c3c/out/vs/platform/terminal/node/ptyHostMain.js:27:1902)
+    at n.fire (/home/sofyan/.vscode-server/bin/e7e037083ff4455cf320e344325dacb480062c3c/out/vs/platform/terminal/node/ptyHostMain.js:27:2119)
+    at process.he (/home/sofyan/.vscode-server/bin/e7e037083ff4455cf320e344325dacb480062c3c/out/vs/platform/terminal/node/ptyHostMain.js:25:9949)
+    at process.emit (node:events:513:28)
+    at emit (node:internal/child_process:937:14)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+2023-10-09 12:34:37.866 [info] New EH opened, aborting shutdown
+2023-10-09 13:03:45.559 [info] [127.0.0.1][921c27d2][ManagementConnection] New connection established.
+2023-10-09 13:03:45.588 [info] [127.0.0.1][4e4efda7][ExtensionHostConnection] New connection established.
+2023-10-09 13:03:45.617 [info] [127.0.0.1][4e4efda7][ExtensionHostConnection] <3526144> Launched Extension Host Process.
+2023-10-09 13:03:48.264 [error] CodeExpectedError: Could not find pty on pty host
+    at A.U (/home/sofyan/.vscode-server/bin/e7e037083ff4455cf320e344325dacb480062c3c/out/vs/platform/terminal/node/ptyHostMain.js:44:32246)
+    at A.updateTitle (/home/sofyan/.vscode-server/bin/e7e037083ff4455cf320e344325dacb480062c3c/out/vs/platform/terminal/node/ptyHostMain.js:44:27446)
+    at V.<computed> (/home/sofyan/.vscode-server/bin/e7e037083ff4455cf320e344325dacb480062c3c/out/vs/platform/terminal/node/ptyHostMain.js:44:22715)
+    at Object.call (/home/sofyan/.vscode-server/bin/e7e037083ff4455cf320e344325dacb480062c3c/out/vs/platform/terminal/node/ptyHostMain.js:34:5059)
+    at h.s (/home/sofyan/.vscode-server/bin/e7e037083ff4455cf320e344325dacb480062c3c/out/vs/platform/terminal/node/ptyHostMain.js:32:5150)
+    at h.q (/home/sofyan/.vscode-server/bin/e7e037083ff4455cf320e344325dacb480062c3c/out/vs/platform/terminal/node/ptyHostMain.js:32:4661)
+    at g.value (/home/sofyan/.vscode-server/bin/e7e037083ff4455cf320e344325dacb480062c3c/out/vs/platform/terminal/node/ptyHostMain.js:32:4066)
+    at n.z (/home/sofyan/.vscode-server/bin/e7e037083ff4455cf320e344325dacb480062c3c/out/vs/platform/terminal/node/ptyHostMain.js:27:1902)
+    at n.fire (/home/sofyan/.vscode-server/bin/e7e037083ff4455cf320e344325dacb480062c3c/out/vs/platform/terminal/node/ptyHostMain.js:27:2119)
+    at process.he (/home/sofyan/.vscode-server/bin/e7e037083ff4455cf320e344325dacb480062c3c/out/vs/platform/terminal/node/ptyHostMain.js:25:9949)
+    at process.emit (node:events:513:28)
+    at emit (node:internal/child_process:937:14)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+2023-10-09 13:08:45.801 [info] [127.0.0.1][5a18fe62][ExtensionHostConnection] <3525326> Extension Host Process exited with code: 0, signal: null.
+2023-10-09 13:35:48.493 [info] [127.0.0.1][ee1d2d53][ManagementConnection] New connection established.
+2023-10-09 13:35:48.498 [info] [127.0.0.1][a637101b][ExtensionHostConnection] New connection established.
+2023-10-09 13:35:48.525 [info] [127.0.0.1][a637101b][ExtensionHostConnection] <3527581> Launched Extension Host Process.
+2023-10-09 13:35:50.828 [error] CodeExpectedError: Could not find pty on pty host
+    at A.U (/home/sofyan/.vscode-server/bin/e7e037083ff4455cf320e344325dacb480062c3c/out/vs/platform/terminal/node/ptyHostMain.js:44:32246)
+    at A.updateTitle (/home/sofyan/.vscode-server/bin/e7e037083ff4455cf320e344325dacb480062c3c/out/vs/platform/terminal/node/ptyHostMain.js:44:27446)
+    at V.<computed> (/home/sofyan/.vscode-server/bin/e7e037083ff4455cf320e344325dacb480062c3c/out/vs/platform/terminal/node/ptyHostMain.js:44:22715)
+    at Object.call (/home/sofyan/.vscode-server/bin/e7e037083ff4455cf320e344325dacb480062c3c/out/vs/platform/terminal/node/ptyHostMain.js:34:5059)
+    at h.s (/home/sofyan/.vscode-server/bin/e7e037083ff4455cf320e344325dacb480062c3c/out/vs/platform/terminal/node/ptyHostMain.js:32:5150)
+    at h.q (/home/sofyan/.vscode-server/bin/e7e037083ff4455cf320e344325dacb480062c3c/out/vs/platform/terminal/node/ptyHostMain.js:32:4661)
+    at g.value (/home/sofyan/.vscode-server/bin/e7e037083ff4455cf320e344325dacb480062c3c/out/vs/platform/terminal/node/ptyHostMain.js:32:4066)
+    at n.z (/home/sofyan/.vscode-server/bin/e7e037083ff4455cf320e344325dacb480062c3c/out/vs/platform/terminal/node/ptyHostMain.js:27:1902)
+    at n.fire (/home/sofyan/.vscode-server/bin/e7e037083ff4455cf320e344325dacb480062c3c/out/vs/platform/terminal/node/ptyHostMain.js:27:2119)
+    at process.he (/home/sofyan/.vscode-server/bin/e7e037083ff4455cf320e344325dacb480062c3c/out/vs/platform/terminal/node/ptyHostMain.js:25:9949)
+    at process.emit (node:events:513:28)
+    at emit (node:internal/child_process:937:14)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+2023-10-09 13:40:48.879 [info] [127.0.0.1][4e4efda7][ExtensionHostConnection] <3526144> Extension Host Process exited with code: 0, signal: null.
+2023-10-09 16:09:03.349 [info] [127.0.0.1][55b4d8d7][ManagementConnection] New connection established.
+2023-10-09 16:09:03.391 [info] [127.0.0.1][778c7993][ExtensionHostConnection] New connection established.
+2023-10-09 16:09:03.423 [info] [127.0.0.1][778c7993][ExtensionHostConnection] <3536305> Launched Extension Host Process.
+2023-10-09 16:14:03.762 [info] [127.0.0.1][a637101b][ExtensionHostConnection] <3527581> Extension Host Process exited with code: 0, signal: null.
+2023-10-09 20:27:08.959 [info] [127.0.0.1][778c7993][ExtensionHostConnection] <3536305> Extension Host Process exited with code: 0, signal: null.
+2023-10-09 20:27:08.963 [info] Last EH closed, waiting before shutting down
+2023-10-09 20:32:08.965 [info] Last EH closed, shutting down

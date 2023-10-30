@@ -1,0 +1,19 @@
+h1 {
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+
+    
+}
+
+body{
+    background-color: grey;
+    text-transform: uppercase;
+}
+
+th {
+    padding: all 10px;
+}
+
+

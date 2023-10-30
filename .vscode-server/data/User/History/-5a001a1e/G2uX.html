@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+</head>
+    <title>Table Département</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <h1>
+        Coucou
+    </h1>
+    <h3>
+        Listes département :
+    </h3>
+
+    <table border= 5>
+        <tr>
+            <th>
+                Nom du departement 
+            </th>
+        </tr>
+        <tr >
+            <td>
+                {% for depart in departs %}
+                <li>{{ depart.departement_nom }}</li>
+            {%endfor%}
+            </td>
+        </tr>
+    </table>
+</body>

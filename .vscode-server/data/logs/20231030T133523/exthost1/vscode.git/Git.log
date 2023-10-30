@@ -1,0 +1,113 @@
+2023-10-30 13:35:29.934 [info] Log level: Info
+2023-10-30 13:35:29.935 [info] Validating found git in: "git"
+2023-10-30 13:35:29.935 [info] Using git "2.30.2" from "git"
+2023-10-30 13:35:29.935 [info] > git rev-parse --show-toplevel [17ms]
+2023-10-30 13:35:29.935 [info] fatal: detected dubious ownership in repository at '/home'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /home
+2023-10-30 13:35:29.935 [info] > git rev-parse --show-toplevel [21ms]
+2023-10-30 13:35:29.935 [info] fatal: detected dubious ownership in repository at '/home'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /home
+2023-10-30 13:35:29.935 [info] > git rev-parse --show-toplevel [17ms]
+2023-10-30 13:35:29.935 [info] fatal: detected dubious ownership in repository at '/home'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /home
+2023-10-30 13:35:30.130 [info] > git rev-parse --show-toplevel [175ms]
+2023-10-30 13:35:30.130 [info] fatal: detected dubious ownership in repository at '/home'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /home
+2023-10-30 13:35:30.172 [info] > git rev-parse --show-toplevel [25ms]
+2023-10-30 13:35:30.172 [info] fatal: detected dubious ownership in repository at '/home'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /home
+2023-10-30 13:35:30.204 [info] > git rev-parse --show-toplevel [13ms]
+2023-10-30 13:35:30.204 [info] fatal: detected dubious ownership in repository at '/home'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /home
+2023-10-30 13:35:30.245 [info] > git rev-parse --show-toplevel [24ms]
+2023-10-30 13:35:30.245 [info] fatal: detected dubious ownership in repository at '/home'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /home
+2023-10-30 13:35:30.290 [info] > git rev-parse --show-toplevel [10ms]
+2023-10-30 13:35:30.290 [info] fatal: detected dubious ownership in repository at '/home'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /home
+2023-10-30 13:37:56.435 [info] > git rev-parse --show-toplevel [20ms]
+2023-10-30 13:37:56.436 [info] fatal: detected dubious ownership in repository at '/home'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /home
+2023-10-30 13:52:12.880 [info] > git rev-parse --show-toplevel [3ms]
+2023-10-30 13:52:12.881 [info] fatal: detected dubious ownership in repository at '/home'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /home
+2023-10-30 13:52:38.767 [info] > git rev-parse --show-toplevel [4ms]
+2023-10-30 13:52:38.794 [info] > git rev-parse --git-dir --git-common-dir [6ms]
+2023-10-30 13:52:38.849 [info] Open repository: /home/sofyan
+2023-10-30 13:52:38.908 [info] No remotes found in the git config file.
+2023-10-30 13:52:38.914 [info] > git config --get commit.template [43ms]
+2023-10-30 13:52:38.926 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [22ms]
+2023-10-30 13:52:39.230 [info] > git status -z -uall [243ms]
+2023-10-30 13:52:42.804 [info] > git check-ignore -v -z --stdin [2994ms]
+2023-10-30 13:52:42.827 [info] > git config --get commit.template [81ms]
+2023-10-30 13:52:42.891 [info] No remotes found in the git config file.
+2023-10-30 13:52:42.932 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [42ms]
+2023-10-30 13:52:43.152 [info] > git status -z -uall [184ms]
+2023-10-30 13:52:49.471 [info] > git show --textconv :html/site/Controllers/UserController.php [36ms]
+2023-10-30 13:52:49.482 [info] > git ls-files --stage -- /home/sofyan/html/site/Controllers/UserController.php [13ms]
+2023-10-30 13:52:50.512 [info] No remotes found in the git config file.
+2023-10-30 13:52:50.515 [info] > git config --get commit.template [33ms]
+2023-10-30 13:52:50.521 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [11ms]
+2023-10-30 13:52:50.828 [info] > git status -z -uall [284ms]
+2023-10-30 13:53:01.998 [info] No remotes found in the git config file.
+2023-10-30 13:53:02.002 [info] > git config --get commit.template [56ms]
+2023-10-30 13:53:02.006 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [9ms]
+2023-10-30 13:53:02.489 [info] > git status -z -uall [439ms]
+2023-10-30 13:53:08.174 [info] > git config --get commit.template [61ms]
+2023-10-30 13:53:08.204 [info] No remotes found in the git config file.
+2023-10-30 13:53:08.234 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [30ms]
+2023-10-30 13:53:08.708 [info] > git status -z -uall [441ms]
+2023-10-30 13:53:14.914 [info] > git ls-files --stage -- /home/sofyan/html/site/Controllers/UserController.php [11ms]
+2023-10-30 13:53:15.016 [info] > git show --textconv :html/site/Controllers/UserController.php [10ms]
+2023-10-30 13:53:15.536 [info] No remotes found in the git config file.
+2023-10-30 13:53:15.538 [info] > git config --get commit.template [60ms]
+2023-10-30 13:53:15.555 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [17ms]
+2023-10-30 13:53:15.678 [info] > git ls-files --stage -- /home/sofyan/html/site/Controllers/UserController.php [8ms]
+2023-10-30 13:53:15.766 [info] > git show --textconv :html/site/Controllers/UserController.php [10ms]
+2023-10-30 13:53:15.970 [info] > git status -z -uall [354ms]
+2023-10-30 13:55:07.500 [info] No remotes found in the git config file.
+2023-10-30 13:55:07.504 [info] > git config --get commit.template [29ms]
+2023-10-30 13:55:07.511 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [11ms]
+2023-10-30 13:55:07.793 [info] > git status -z -uall [263ms]
+2023-10-30 13:55:13.337 [info] > git config --get commit.template [4ms]
+2023-10-30 13:55:13.363 [info] No remotes found in the git config file.
+2023-10-30 13:55:13.371 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [8ms]
+2023-10-30 13:55:13.626 [info] > git status -z -uall [230ms]
+2023-10-30 13:55:20.801 [info] No remotes found in the git config file.
+2023-10-30 13:55:20.804 [info] > git config --get commit.template [71ms]
+2023-10-30 13:55:20.832 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [32ms]
+2023-10-30 13:55:21.435 [info] > git status -z -uall [540ms]
+2023-10-30 13:55:27.637 [info] > git show --textconv :html/site/Controllers/UserController.php [89ms]
+2023-10-30 13:55:27.642 [info] > git ls-files --stage -- /home/sofyan/html/site/Controllers/UserController.php [49ms]
+2023-10-30 13:55:32.715 [info] No remotes found in the git config file.
+2023-10-30 13:55:32.717 [info] > git config --get commit.template [62ms]
+2023-10-30 13:55:32.719 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [5ms]
+2023-10-30 13:55:33.042 [info] > git status -z -uall [256ms]
+2023-10-30 13:55:38.560 [info] No remotes found in the git config file.
+2023-10-30 13:55:38.563 [info] > git config --get commit.template [51ms]
+2023-10-30 13:55:38.565 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [4ms]
+2023-10-30 13:55:38.798 [info] > git status -z -uall [205ms]
+2023-10-30 13:55:44.260 [info] No remotes found in the git config file.
+2023-10-30 13:55:44.264 [info] > git config --get commit.template [36ms]
+2023-10-30 13:55:44.271 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [12ms]
+2023-10-30 13:55:44.568 [info] > git status -z -uall [268ms]

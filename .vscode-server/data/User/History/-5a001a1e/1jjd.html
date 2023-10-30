@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<header>
+    <title>Table Département</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css"/>
+</header>
+
+
+<body>
+    <table id="tabdep" class="display">
+        <thead>
+            <tr>
+                <th>
+                    Département
+                </th>
+                <th>
+                    Id
+                </th>
+            </tr>
+        </thead>
+        {% for depart in departs %}
+            <tr>
+                <td>
+                    {{ depart.departement_nom }}
+                </td>
+                <td>
+                    {{ depart.id }}
+                </td>
+             </tr>
+        {% endfor %}
+    </table>
+</body>
+<script>
+    table=new DataTable('#tabdep');
+</script>
+</html>

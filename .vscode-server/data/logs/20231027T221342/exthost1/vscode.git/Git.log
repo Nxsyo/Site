@@ -1,0 +1,103 @@
+2023-10-27 22:13:53.417 [info] Log level: Info
+2023-10-27 22:13:53.417 [info] Validating found git in: "git"
+2023-10-27 22:13:53.417 [info] Using git "2.30.2" from "git"
+2023-10-27 22:13:53.417 [info] > git rev-parse --show-toplevel [74ms]
+2023-10-27 22:13:53.417 [info] fatal: detected dubious ownership in repository at '/home'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /home
+2023-10-27 22:13:53.417 [info] > git rev-parse --show-toplevel [11ms]
+2023-10-27 22:13:53.417 [info] fatal: detected dubious ownership in repository at '/home'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /home
+2023-10-27 22:13:53.417 [info] > git rev-parse --show-toplevel [4ms]
+2023-10-27 22:13:53.417 [info] fatal: detected dubious ownership in repository at '/home'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /home
+2023-10-27 22:13:53.417 [info] > git rev-parse --show-toplevel [5ms]
+2023-10-27 22:13:53.417 [info] fatal: detected dubious ownership in repository at '/home'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /home
+2023-10-27 22:13:53.417 [info] > git rev-parse --show-toplevel [3ms]
+2023-10-27 22:13:53.417 [info] fatal: detected dubious ownership in repository at '/home'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /home
+2023-10-27 22:13:53.417 [info] > git rev-parse --show-toplevel [22ms]
+2023-10-27 22:13:53.417 [info] fatal: detected dubious ownership in repository at '/home'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /home
+2023-10-27 22:13:53.662 [info] > git rev-parse --show-toplevel [225ms]
+2023-10-27 22:13:53.662 [info] fatal: detected dubious ownership in repository at '/home'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /home
+2023-10-27 22:13:53.732 [info] > git rev-parse --show-toplevel [22ms]
+2023-10-27 22:13:53.733 [info] fatal: detected dubious ownership in repository at '/home'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /home
+2023-10-27 22:13:54.426 [info] > git rev-parse --show-toplevel [13ms]
+2023-10-27 22:13:54.426 [info] fatal: detected dubious ownership in repository at '/home'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /home
+2023-10-27 22:13:56.383 [info] > git rev-parse --show-toplevel [7ms]
+2023-10-27 22:13:56.383 [info] fatal: detected dubious ownership in repository at '/home'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /home
+2023-10-27 22:14:03.153 [info] > git rev-parse --show-toplevel [7ms]
+2023-10-27 22:14:03.153 [info] fatal: detected dubious ownership in repository at '/home'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /home
+2023-10-27 22:14:05.104 [info] > git rev-parse --show-toplevel [9ms]
+2023-10-27 22:14:05.104 [info] fatal: detected dubious ownership in repository at '/home'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /home
+2023-10-27 22:14:06.063 [info] > git rev-parse --show-toplevel [9ms]
+2023-10-27 22:14:06.063 [info] fatal: detected dubious ownership in repository at '/home'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /home
+2023-10-27 22:14:07.274 [info] > git rev-parse --show-toplevel [6ms]
+2023-10-27 22:14:07.275 [info] fatal: detected dubious ownership in repository at '/home'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /home
+2023-10-27 22:14:08.093 [info] > git rev-parse --show-toplevel [4ms]
+2023-10-27 22:14:08.093 [info] fatal: detected dubious ownership in repository at '/home'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /home
+2023-10-27 22:14:08.780 [info] > git rev-parse --show-toplevel [5ms]
+2023-10-27 22:14:08.780 [info] fatal: detected dubious ownership in repository at '/home'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /home
+2023-10-27 22:14:19.364 [info] > git rev-parse --show-toplevel [6ms]
+2023-10-27 22:14:19.364 [info] fatal: detected dubious ownership in repository at '/home'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /home
+2023-10-27 22:14:20.955 [info] > git rev-parse --show-toplevel [16ms]
+2023-10-27 22:14:20.955 [info] fatal: detected dubious ownership in repository at '/home'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /home
+2023-10-27 22:14:22.027 [info] > git rev-parse --show-toplevel [4ms]
+2023-10-27 22:14:22.028 [info] fatal: detected dubious ownership in repository at '/home'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /home
+2023-10-27 22:14:24.515 [info] > git rev-parse --show-toplevel [4ms]
+2023-10-27 22:14:24.515 [info] fatal: detected dubious ownership in repository at '/home'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /home

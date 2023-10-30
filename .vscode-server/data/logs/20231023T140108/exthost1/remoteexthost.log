@@ -1,0 +1,5 @@
+2023-10-23 14:01:24.607 [info] Extension host with pid 3776429 started
+2023-10-23 14:01:27.267 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2023-10-23 14:01:27.655 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2023-10-23 14:01:27.782 [info] Extension host terminating: received terminate message from renderer
+2023-10-23 14:01:27.801 [info] Extension host with pid 3776429 exiting with code 0

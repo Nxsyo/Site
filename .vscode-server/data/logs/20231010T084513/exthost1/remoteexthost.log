@@ -1,0 +1,18 @@
+2023-10-10 08:45:20.076 [info] Extension host with pid 3547952 started
+2023-10-10 08:45:20.239 [info] Lock '/home/sofyan/.vscode-server/data/User/workspaceStorage/dc876debb397f3f61920b899333819c3/vscode.lock': Lock acquired.
+2023-10-10 08:45:20.444 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2023-10-10 08:45:20.461 [info] ExtensionService#_doActivateExtension vscode.html-language-features, startup: false, activationEvent: 'onLanguage:html'
+2023-10-10 08:45:22.120 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2023-10-10 08:45:22.677 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2023-10-10 08:45:22.678 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2023-10-10 08:45:25.281 [info] Eager extensions activated
+2023-10-10 08:45:25.283 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2023-10-10 08:45:25.288 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2023-10-10 08:49:19.772 [info] ExtensionService#_doActivateExtension vscode.php-language-features, startup: false, activationEvent: 'onLanguage:php'
+2023-10-10 09:05:45.110 [info] ExtensionService#_doActivateExtension vscode.extension-editing, startup: false, activationEvent: 'onLanguage:json'
+2023-10-10 09:05:45.111 [info] ExtensionService#_doActivateExtension vscode.json-language-features, startup: false, activationEvent: 'onLanguage:json'
+2023-10-10 09:05:45.112 [info] ExtensionService#_doActivateExtension vscode.npm, startup: false, activationEvent: 'onLanguage:json'
+2023-10-10 09:49:17.580 [info] ExtensionService#_doActivateExtension vscode.debug-server-ready, startup: false, activationEvent: 'onDebugResolve'
+2023-10-10 10:57:50.607 [info] Extension host terminating: renderer disconnected for too long (2)
+2023-10-10 10:57:50.610 [info] Lock '/home/sofyan/.vscode-server/data/User/workspaceStorage/dc876debb397f3f61920b899333819c3/vscode.lock': Marking the lockfile as scheduled to be released in 6000 ms.
+2023-10-10 10:57:50.772 [info] Extension host with pid 3547952 exiting with code 0

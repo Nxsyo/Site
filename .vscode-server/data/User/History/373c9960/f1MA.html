@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        {% block stylesheet %}
+        {% endblock %}
+        <title>
+            {% block title %}
+            Home {% endblock %}
+        </title>
+    </head>
+    <body>
+        <h1>BASE HTML</h1>
+        <ul>
+            <li><a href="http://195.154.118.169/sofyan/site/start.php?c=user&t=index">One</a></li>
+            <li><a href=$url>List</a></li>
+        </ul>
+        {% block body %}
+        {% endblock %}
+
+        {% block script %}
+        {% endblock %}
+    </body>
+</html>
