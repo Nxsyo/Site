@@ -1,10 +1,94 @@
 <?php
+namespace Controllers ;
 
-namespace Controllers ; 
+use PDO;
+use User;
 
 class UserController extends Controller
 
 {
+    public function edit($params) {
+        
+        $id=($params['get']['id']);
+        $em=$params['em'];
+        $user=$em->find('User',$id);
+        echo $this->twig->render('edit.html' , ['user' => $user]);
+
+    }
+
+    public function update($params) {
+
+        $em = $params['em'];
+        $id =($params['post']['id']);
+    
+        $user = $em->find('User', $id);
+    
+        $user->setNom($params['post']['nom']);
+        $user->setPrenom($params['post']['prenom']);
+    
+        
+            $em->flush();
+        
+            header('Location: start.php?c=user&t=display');
+            exit();
+       
+    }
+
+    public function delete($params) {
+        
+        $id=($params['get']['id']);
+        $em=$params['em'];
+        $user=$em->find('User',$id);
+
+        $em->remove($user);
+        $em->flush();
+
+        header('Location: start.php?c=user&t=display');
+    }
+    
+    
+    
+
+    public function display($params) {
+        $username = 'sofyan';
+        $password = 'plop';
+        $dbname = 'BTS_Sofyan';
+        $dsn = 'mysql:host=localhost;dbname=BTS_Sofyan;charset=utf8';
+    
+        $sql = 'SELECT * FROM users';
+        try {
+            $pdo = new \PDO($dsn, $username, $password);
+            $stmt = $pdo->query($sql);
+    
+            if ($stmt === false) {
+                die('Erreur');
+            }
+    
+            $users = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+            echo $this->twig->render('index.html', ['users' => $users , "params" => $params]);
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
+
+
+
+    public function one($params)
+    {
+        $entityManager=$params["em"];
+        $connectUser="Un seul";
+
+        $user = new User();
+
+        $user->setNom("TEST");
+        $user->setPrenom("TEST");
+        $entityManager->persist($user);
+        $entityManager->flush();
+
+        echo $this->twig->render('index.html' , ['connectUser'=> $connectUser,"params"=>$params]);
+    }
+    
+
     public function index()
     {   
         $prenomUser="Sofyan";
@@ -21,58 +105,27 @@ class UserController extends Controller
 
     public function create() 
     {
-
-            $db = new \PDO(
-                'mysql:host=localhost;dbname=BTS_Sofyan;charset=utf8',
-                'sofyan',
-                'plop'
-            );
-
-        $stmt=$db->query('SELECT id, ville_nom FROM villes_france_free LIMIT 20');
-        $villes=$stmt->fetchAll(\PDO::FETCH_ASSOC);
-        echo $this->twig->render('create.html',['villes'=>$villes]);
-
+        echo $this->twig->render('create.html');
     }
 
     
-    public function insert()
-{
-    $db = new \PDO(
-        'mysql:host=localhost;dbname=BTS_Sofyan;charset=utf8',
-        'sofyan',
-        'plop'
-    );
+    public function insert($params) {
 
-    try {
-        $user_nom = $_POST['user_nom'];
-        $user_prenom = $_POST['user_prenom'];
-        $ville_id = $_POST['ville_id'];
+        $em = $params['em'];
 
-        $stmt = $db->prepare("INSERT INTO users (user_nom, user_prenom, ville_id) VALUES (:nom, :prenom, :ville_id)");
+        $nom =($_POST['nom']);
+        $prenom =($_POST['prenom']);
 
-        $stmt->bindParam(':nom', $user_nom);
-        $stmt->bindParam(':prenom', $user_prenom);
-        $stmt->bindParam(':ville_id', $ville_id);
+        $newUser = new User();
+        $newUser->setNom($nom);
+        $newUser->setPrenom($prenom);
 
-        $stmt->execute();
+        $em->persist($newUser);
+        $em->flush();
 
-        echo "Les données ont été insérées avec succès.";
-    } catch (PDOException $e) {
-        echo "Erreur lors de l'insertion des données : " . $e->getMessage();
+        header('Location: start.php?c=user&t=display');
     }
-}
-
-    public function display() {
-        $db = new \PDO(
-            'mysql:host=localhost;dbname=BTS_Sofyan;charset=utf8',
-            'sofyan',
-            'plop'
-        );
-
-        ##ici une requete sera ecrite 
-        ##petit essai
-    }
-    
+  
 }
 
 ?>

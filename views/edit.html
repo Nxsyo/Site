@@ -1,0 +1,33 @@
+{% extends "base.html" %} {% block title %} Modifier l'utilisateur {% endblock
+%} {% block stylesheet %}
+<style>
+  .centered-form {
+    text-align: center;
+  }
+
+  .centered-form form {
+    display: inline-block;
+    text-align: left;
+    margin: 0 auto;
+  }
+</style>
+{% endblock %} {% block body %}
+<div class="centered-form">
+  <h2>Modifier l'utilisateur</h2>
+  <form method="post" action="start.php?c=user&t=update">
+    <input type="hidden" name="id" value="{{ user.id }}" />
+    <label for="nom">Nom :</label>
+    <input type="text" name="nom" id="nom" value="{{ user.nom }}" /><br />
+
+    <label for="prenom">Prénom :</label>
+    <input
+      type="text"
+      name="prenom"
+      id="prenom"
+      value="{{ user.prenom }}"
+    /><br />
+
+    <input type="submit" value="Enregistrer les modifications" />
+  </form>
+</div>
+{% endblock %}
