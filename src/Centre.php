@@ -1,11 +1,11 @@
 <?php
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\ManyToOne;
 
 #[ORM\Entity]
-#[ORM\Table(name: 'users')]
-
-class User
+#[ORM\Table(name: 'centre')]
+class Centre
 {
     #[ORM\Id]
     #[ORM\Column(type: 'integer')]
@@ -14,12 +14,12 @@ class User
     #[ORM\Column(type: 'string')]
     private string $nom;
     #[ORM\Column(type: 'string')]
-    private string $prenom;
-    #[ORM\Column(type: 'string', length : 12, nullable :true)]
-    private string $password;
+    private string $adresse;
+    #[ORM\Column(type: 'string')]
+    private string $ville;
+    #[OneToMany(mappedBy: 'centre', targetEntity: Candidat::class)]
+    private Collection $candidat;
     
-
-    // .. (other code)
 
     /**
      * Get id.
@@ -36,7 +36,7 @@ class User
      *
      * @param string $nom
      *
-     * @return User
+     * @return Centre
      */
     public function setNom($nom)
     {
@@ -56,50 +56,50 @@ class User
     }
 
     /**
-     * Set prenom.
+     * Set adresse.
      *
-     * @param string $prenom
+     * @param string $adresse
      *
-     * @return User
+     * @return Centre
      */
-    public function setPrenom($prenom)
+    public function setAdresse($adresse)
     {
-        $this->prenom = $prenom;
+        $this->adresse = $adresse;
 
         return $this;
     }
 
     /**
-     * Get prenom.
+     * Get adresse.
      *
      * @return string
      */
-    public function getPrenom()
+    public function getAdresse()
     {
-        return $this->prenom;
+        return $this->adresse;
     }
 
     /**
-     * Set password.
+     * Set ville.
      *
-     * @param string|null $password
+     * @param string $ville
      *
-     * @return User
+     * @return Centre
      */
-    public function setPassword($password = null)
+    public function setVille($ville)
     {
-        $this->password = $password;
+        $this->ville = $ville;
 
         return $this;
     }
 
     /**
-     * Get password.
+     * Get ville.
      *
-     * @return string|null
+     * @return string
      */
-    public function getPassword()
+    public function getVille()
     {
-        return $this->password;
+        return $this->ville;
     }
 }

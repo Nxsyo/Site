@@ -1,0 +1,23 @@
+<?php
+
+use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\ManyToOne;
+
+#[ORM\Entity]
+#[ORM\Table(name: 'competence')]
+class Competence
+{
+    #[ORM\Id]
+    #[ORM\Column(type:'integer')]
+    #[ORM\GeneratedValue]
+    private int|null $id = null;
+    #[ORM\Column(type: 'string')]
+    private string $short_lib;
+    #[ORM\Column(type: 'string')]
+    private string $long_lib;
+    
+    #[ORM\ManyToMany(targetEntity: 'Realisation')]
+    private $realisations;
+}
+
+
