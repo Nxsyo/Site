@@ -12,11 +12,11 @@ class CompetenceController extends Controller {
         $competenceRepository = $entityManager->getRepository('Competence');
         $competences = $competenceRepository->findAll();
 
-        return $this->render('crudCompetence.html', ['competences' => $competences, 'params' => $params]);
+        echo $this->twig->render('crudCompetence.html', ['competences' => $competences, 'params' => $params]);
     }
 
     public function createCompetence() {
-        return $this->render('createCompetence.html');
+        echo $this->twig->render('createCompetence.html');
     }
 
     public function insert($params) {
@@ -53,7 +53,7 @@ class CompetenceController extends Controller {
         $em = $params['em'];
         $competence = $em->find('Competence', $id);
 
-        return $this->render('editCompetence.html', ['competence' => $competence]);
+        echo $this->twig->render('editCompetence.html', ['competence' => $competence]);
     }
 
     public function updateCompetence($params) {

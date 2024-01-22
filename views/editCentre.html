@@ -2,7 +2,7 @@
 {% block body %}
 <div class="edit-centre">
   <h1>Modifier le Centre</h1>
-  <form method="post" action="start.php?c=centre&t=updateCentre" enctype="multipart/form-data">
+  <form method="post" action="start.php?c=centre&t=updateCentre">
     <input type="hidden" name="id" value="{{ centre.id }}" />
       <label for="nom">Nom :</label>
       <input type='text' name='nom' id='nom' value="{{ centre.nom }}"/><br />

@@ -39,7 +39,7 @@
         "em"=>$entityManager,
         "url"=>"http://195.154.118.169/sofyan/site/",
     ));
-
+    
     if ($class == "Controllers\IndexController" && in_array($target, get_class_methods($class))) {
         $class = new Controllers\IndexController;
         call_user_func_array([$class, $target], $params);

@@ -1,0 +1,16 @@
+{% extends 'adminbase.html' %}
+{% block body %}
+    <h1>Portfolio</h1>
+    <table id="Portfolio">
+        <thead>
+            <th>Compétences</th>
+            {% for competence in competences %}
+                <th>{{ competence.shortlib }}</th>
+            {% endfor %}
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    
+
+{% endblock %}

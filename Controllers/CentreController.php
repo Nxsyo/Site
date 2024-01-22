@@ -9,8 +9,8 @@ class CentreController extends Controller
 {
     public function panelCentre($params) {
         $entityManager = $params["em"];
-        $personnelRepository = $entityManager->getRepository('Centre');
-        $centres = $personnelRepository->findAll();
+        $centreRepository = $entityManager->getRepository('Centre');
+        $centres = $centreRepository->findAll();
 
         echo $this->twig->render('crudCentre.html', ['centres' => $centres, 'params' => $params]); 
     }
@@ -39,35 +39,43 @@ class CentreController extends Controller
     }
 
     public function deleteCentre($params) {
-        $id=($params['get']['id']);
-        $em=$params['em'];
-        $centre=$em->find('Centre',$id);
-
-        $em->remove($centre);
-        $em->flush();
-
-        header('Location: start.php?c=centre&t=panelcentre');
+        $id = ($params['get']['id']);
+        $em = $params['em'];
+        $centre = $em->find('Centre', $id);
+    
+        $candidatRepository = $em->getRepository('Candidat');
+        $candidatsAffilies = $candidatRepository->findBy(['centre' => $centre]);
+    
+        if (!empty($candidatsAffilies)) {
+            $errorMessage = "Impossible de supprimer ce centre car des candidats y sont affiliés.";
+            echo $this->twig->render('error.html', ['errorMessage' => $errorMessage]);
+        } else {
+            $em->remove($centre);
+            $em->flush();
+            header('Location: start.php?c=centre&t=panelcentre');
+        }
     }
+    
 
     public function editCentre($params) {
         $entityManager = $params["em"];
 
         $id=($params['get']['id']);
         $em=$params['em'];
-        $centres=$em->find('Centre',$id);
+        $centre=$em->find(Centre::class,$id);
 
-        echo $this->twig->render('editCentre.html',['centres'=>$centres]);
+        echo $this->twig->render('editCentre.html',['centre'=>$centre]);
     }
 
     public function updateCentre($params) {
         $em = $params['em'];
         $id = $params['post']['id'];
     
-        $centres = $em->find('Centre', $id);
+        $centre = $em->find('Centre', $id);
     
-        $centres->setNom($params['post']['nom']);
-        $centres->setAdresse($params['post']['adresse']);
-        $centres->setVille($params['post']['ville']);
+        $centre->setNom($params['post']['nom']);
+        $centre->setAdresse($params['post']['adresse']);
+        $centre->setVille($params['post']['ville']);
 
         $em->flush();
     
