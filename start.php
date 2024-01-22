@@ -21,6 +21,7 @@
     $useSimpleAnnotationReader = false;
     $config = ORMSetup::createAttributeMetaDataConfiguration(array(__DIR__."/src/"),$isDevMode, $proxyDir, $cache, $useSimpleAnnotationReader);
     $entityManager = EntityManager::create($dbParams, $config);
+    
 
 
 

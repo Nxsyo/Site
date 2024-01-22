@@ -3,14 +3,57 @@
     <h1>Portfolio</h1>
     <table id="Portfolio">
         <thead>
-            <th>Compétences</th>
-            {% for competence in competences %}
-                <th>{{ competence.shortlib }}</th>
-            {% endfor %}
+            <tr>
+                <th>Réalisations / Compétences</th>
+                {% for competence in competences %}
+                <td>{{ competence.shortlib }}</td>
+                {% endfor %}
+            </tr>
+                <th></th>
+                {% for competence in competences %}
+                <td>{{ competence.longlib }}</td>
+                {% endfor %}
+            <tr>
         </thead>
         <tbody>
+                {% for realisation in realisations %}
+                    <tr>
+                        <td>{{ realisation.lib }}</td>
+                        {% for competence in competences %}
+                            <td class="synt" data-realisation-id="{{ realisation.id }}" data-competence-id="{{ competence.id }}" 
+                            id="{{ competence.id }}-{{ realisation.id }}"></td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </tr>
         </tbody>
     </table>
     
 
+{% endblock %}
+
+{% block javascript %}
+<script>
+    $('.synt').on('click', function() {
+        var realisationId = $(this).data('realisation-id');
+        var competenceId = $(this).data('competence-id');
+
+        $.ajax({
+            url: 'start.php/addNewCompetence',
+            method: 'POST',
+            data: {
+                realisationId: realisationId,
+                competenceId: competenceId
+            },
+            success: function(response) {
+                console.log(response);
+            },
+            error: function(xhr, status, error) {
+                console.error(error);
+            }
+    });
+});
+
+
+</script>
 {% endblock %}

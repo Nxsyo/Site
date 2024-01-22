@@ -18,6 +18,11 @@ class PortfolioController extends Controller
         $realisations = $entityManager->getRepository(Realisation::class)->findAll();
 
 
+
         echo $this->twig->render('portfolio.html', ['candidats' => $candidats, 'centres' => $centres, 'competences' => $competences, 'realisations' => $realisations, 'params' => $params]); 
     }
-}
+
+        public function addNewCompetence($params) {
+           
+        }
+    }
