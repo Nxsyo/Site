@@ -23,14 +23,14 @@ class PortfolioController extends Controller
     public function addCompetence($params) {
         $realisationId = $params['post']['realisationId'];
         $competenceId = $params['post']['competenceId'];
-    
+        
         $entityManager = $params["em"];
-    
+        
         $realisation = $entityManager->find(Realisation::class, $realisationId);
         $competence = $entityManager->find(Competence::class, $competenceId);
     
         if (!$realisation || !$competence) {
-            return new JsonResponse('error');
+            echo('error');
         }
     
         $realisation->addCompetence($competence);
@@ -38,7 +38,7 @@ class PortfolioController extends Controller
         $entityManager->persist($realisation);
         $entityManager->flush();
     
-        return new JsonResponse('success');
+        echo('success');
     }
 
     public function removeCompetence($params) {
@@ -51,7 +51,7 @@ class PortfolioController extends Controller
         $competence = $entityManager->find(Competence::class, $competenceId);
     
         if (!$realisation || !$competence) {
-            return new JsonResponse('error');
+            echo('error');
         }
     
         $realisation->removeCompetence($competence);
@@ -59,6 +59,6 @@ class PortfolioController extends Controller
         $entityManager->persist($realisation);
         $entityManager->flush();
     
-        return new JsonResponse('success');
+            echo('success');
     }
     }

@@ -31,56 +31,54 @@
 
 {% block javascript %}
 <script>
-    
         $('.synt').on('click', function() {
-        var realisationId = $(this).data('realisation-id');
-        var competenceId = $(this).data('competence-id');
-        console.log("Realisation ID: " + realisationId);
-        console.log("Competence ID: " + competenceId);
-        toggleCompetence(realisationId, competenceId, this);
-    });
+            var realisationId = $(this).data('realisation-id');
+            var competenceId = $(this).data('competence-id');
+            console.log("Realisation ID: " + realisationId);
+            console.log("Competence ID: " + competenceId);
+            toggleCompetence(realisationId, competenceId, this);
+        });
 
     
-    function toggleCompetence(realisationId, competenceId, cellElement) {
-        const currentStatus = cellElement.textContent.trim();
-        if (currentStatus === "") {
-            $.ajax({
-                url: '?c=portfolio&t=addCompetence',
-                method: 'POST',
-                data: {
-                    realisationId: realisationId,
-                    competenceId: competenceId
-                },
-                success: function(response) {
-                    if (response === 'success') {
-                        cellElement.textContent = 'OK';
-                        cellElement.style.backgroundColor = 'green';
+        function toggleCompetence(realisationId, competenceId, cellElement) {
+            const currentStatus = $(cellElement).text().trim();
+            if (currentStatus === "") {
+                $.ajax({
+                    url: '?c=portfolio&t=addCompetence',
+                    method: 'POST',
+                    data: {
+                        realisationId: realisationId,
+                        competenceId: competenceId
+                    },
+                    success: function(response) {
+                        if (response === 'success') {
+                            $(cellElement).text("OK").addClass("validated");
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(error);
                     }
-                },
-                error: function(xhr, status, error) {
-                    console.error(error);
-                }
-            });
-        } else {
-            $.ajax({
-                url: '?c=portfolio&t=removeCompetence',
-                method: 'POST',
-                data: {
-                    realisationId: realisationId,
-                    competenceId: competenceId
-                },
-                success: function(response) {
-                    if (response === 'success') {
-                        cellElement.textContent = '';
-                        cellElement.style.backgroundColor = '';
+                });
+            } else {
+                $.ajax({
+                    url: '?c=portfolio&t=removeCompetence',
+                    method: 'POST',
+                    data: {
+                        realisationId: realisationId,
+                        competenceId: competenceId
+                    },
+                    success: function(response) {
+                        if (response === 'success') {
+                            $(cellElement).empty().removeClass("validated");
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(error);
                     }
-                },
-                error: function(xhr, status, error) {
-                    console.error(error);
-                }
-            });
+                });
+            }
         }
-    }
+
 </script>
 {% endblock %}
 
