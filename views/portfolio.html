@@ -16,44 +16,71 @@
             <tr>
         </thead>
         <tbody>
-                {% for realisation in realisations %}
-                    <tr>
-                        <td>{{ realisation.lib }}</td>
-                        {% for competence in competences %}
-                            <td class="synt" data-realisation-id="{{ realisation.id }}" data-competence-id="{{ competence.id }}" 
-                            id="{{ competence.id }}-{{ realisation.id }}"></td>
-                        {% endfor %}
-                    </tr>
-                {% endfor %}
-            </tr>
+            {% for realisation in realisations %}
+                <tr>
+                    <td>{{ realisation.lib }}</td>
+                    {% for competence in competences %}
+                        <td class="synt" data-realisation-id="{{ realisation.id }}" data-competence-id="{{ competence.id }}" 
+                        id="{{ competence.id }}-{{ realisation.id }}"></td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
         </tbody>
     </table>
-    
-
 {% endblock %}
 
 {% block javascript %}
 <script>
-    $('.synt').on('click', function() {
+    
+        $('.synt').on('click', function() {
         var realisationId = $(this).data('realisation-id');
         var competenceId = $(this).data('competence-id');
-
-        $.ajax({
-            url: 'start.php/addNewCompetence',
-            method: 'POST',
-            data: {
-                realisationId: realisationId,
-                competenceId: competenceId
-            },
-            success: function(response) {
-                console.log(response);
-            },
-            error: function(xhr, status, error) {
-                console.error(error);
-            }
+        console.log("Realisation ID: " + realisationId);
+        console.log("Competence ID: " + competenceId);
+        toggleCompetence(realisationId, competenceId, this);
     });
-});
 
-
+    
+    function toggleCompetence(realisationId, competenceId, cellElement) {
+        const currentStatus = cellElement.textContent.trim();
+        if (currentStatus === "") {
+            $.ajax({
+                url: '?c=portfolio&t=addCompetence',
+                method: 'POST',
+                data: {
+                    realisationId: realisationId,
+                    competenceId: competenceId
+                },
+                success: function(response) {
+                    if (response === 'success') {
+                        cellElement.textContent = 'OK';
+                        cellElement.style.backgroundColor = 'green';
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error(error);
+                }
+            });
+        } else {
+            $.ajax({
+                url: '?c=portfolio&t=removeCompetence',
+                method: 'POST',
+                data: {
+                    realisationId: realisationId,
+                    competenceId: competenceId
+                },
+                success: function(response) {
+                    if (response === 'success') {
+                        cellElement.textContent = '';
+                        cellElement.style.backgroundColor = '';
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error(error);
+                }
+            });
+        }
+    }
 </script>
 {% endblock %}
+

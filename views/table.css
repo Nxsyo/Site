@@ -25,3 +25,8 @@
 #Portfolio td:not(:first-child) {
     text-align: center;
 }
+
+/* .validated {
+    background-color: green;
+    color: white;
+} */

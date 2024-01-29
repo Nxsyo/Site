@@ -12,15 +12,12 @@
 
 <body>
     {% block body %}
-        toto
-    {% endblock %}
 
-    {% block javascript %}{% endblock %}
-    <script>
-        $(document).ready(function () {
-            $("#enginsTable").DataTable();
-        });
-    </script>
+        {% block javascript %}
+
+        {% endblock %}
+
+    {% endblock %}
 
 </body>
 </html>
