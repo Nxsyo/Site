@@ -23,24 +23,24 @@ class PortfolioController extends Controller
     public function addCompetence($params) {
         $realisationId = $params['post']['realisationId'];
         $competenceId = $params['post']['competenceId'];
-        
+    
         $entityManager = $params["em"];
-        
+    
         $realisation = $entityManager->find(Realisation::class, $realisationId);
         $competence = $entityManager->find(Competence::class, $competenceId);
     
         if (!$realisation || !$competence) {
-            echo('error');
+            echo json_encode(['status' => 'error']);
+        } else {
+            $realisation->addCompetence($competence);
+    
+            $entityManager->persist($realisation);
+            $entityManager->flush();
+    
+            echo json_encode(['status' => 'success']);
         }
-    
-        $realisation->addCompetence($competence);
-    
-        $entityManager->persist($realisation);
-        $entityManager->flush();
-    
-        echo('success');
     }
-
+    
     public function removeCompetence($params) {
         $realisationId = $params['post']['realisationId'];
         $competenceId = $params['post']['competenceId'];
@@ -51,14 +51,42 @@ class PortfolioController extends Controller
         $competence = $entityManager->find(Competence::class, $competenceId);
     
         if (!$realisation || !$competence) {
-            echo('error');
+            echo json_encode(['status' => 'error']);
+        } else {
+            $realisation->removeCompetence($competence);
+    
+            $entityManager->persist($realisation);
+            $entityManager->flush();
+    
+            echo json_encode(['status' => 'success']);
+        }
+    }
+
+    public function checkRelation($params) {
+        $realisationId = $params['post']['realisationId'];
+        $competenceId = $params['post']['competenceId'];
+    
+        $entityManager = $params["em"];
+    
+        $realisation = $entityManager->find(Realisation::class, $realisationId);
+        $competence = $entityManager->find(Competence::class, $competenceId);
+    
+        if (!$realisation || !$competence) {
+            echo json_encode(['status' => 'error']);
+            return;
         }
     
-        $realisation->removeCompetence($competence);
+        $competencesrea = $realisation->getCompetences();
+        $relationExists = $competencesrea->contains($competence);
     
-        $entityManager->persist($realisation);
-        $entityManager->flush();
-    
-            echo('success');
+        if ($relationExists) {
+            echo json_encode(['status' => 'exists']);
+        } else {
+            echo json_encode(['status' => 'not_exists']);
+        }
     }
+    
+    
+    
+    
     }
