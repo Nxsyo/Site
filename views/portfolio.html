@@ -1,60 +1,103 @@
-{% extends 'adminbase.html' %}
-{% block body %}
-    <h1>Portfolio</h1>
-    <table id="Portfolio">
-        <thead>
-            <tr>
-                <th>Réalisations / Compétences</th>
-                {% for competence in competences %}
-                <td>{{ competence.shortlib }}</td>
-                {% endfor %}
-            </tr>
-                <th></th>
-                {% for competence in competences %}
-                <td>{{ competence.longlib }}</td>
-                {% endfor %}
-            <tr>
-        </thead>
-        <tbody>
-            {% for realisation in realisations %}
-                <tr>
-                    <td>{{ realisation.lib }}</td>
-                    {% for competence in competences %}
-                    <td class="synt" data-realisation-id="{{ realisation.id }}" data-competence-id="{{ competence.id }}" 
-                     id="{{ competence.id }}-{{ realisation.id }}" data-relation="0"></td>
+    {% extends 'adminbase.html' %}
+    {% block body %}
+        <h1>Portfolio de {{ utilisateurs_prenom }}</h1>
+        <button id="loginButton">Se connecter</button>
+        <button id="logoutButton" style="display: none;">Se déconnecter</button>
 
+
+        <form class="login-form" id="loginForm">
+
+            {% if error %}
+                <p style="color: red;">{{ error }}</p>
+            {% endif %}
+
+            <label for="email">Email :</label>
+                <input type="email" name="email" id="email" /><br />
+
+                <label for="password">Mot De Passe :</label>
+                <input type="password" name="password" id="password" /><br />
+
+                <input type="submit" value="Se connecter" />
+        </form>
+        <div id="loginMessage"></div>
+
+        <table id="Portfolio">
+            <thead>
+                <tr>
+                    <th>Réalisations</th>
+                    {% for competence in competences %}
+                    <td>{{ competence.shortlib }}</td>
                     {% endfor %}
                 </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-{% endblock %}
+                    <th></th>
+                    {% for competence in competences %}
+                    <td>{{ competence.longlib }}</td>
+                    {% endfor %}
+                <tr>
+            </thead>
+            <tbody>
+                {% for realisation in realisations %}
+                    <tr>
+                        <td>{{ realisation.lib }}</td>
+                        {% for competence in competences %}
+                        <td class="synt" data-realisation-id="{{ realisation.id }}" data-competence-id="{{ competence.id }}" 
+                        id="{{ competence.id }}-{{ realisation.id }}" data-relation="0"></td>
 
-{% block javascript %}
-<script>
-        $('.synt').on('click', function() {
-    var realisationId = $(this).data('realisation-id');
-    var competenceId = $(this).data('competence-id');
-    toggleCompetence(realisationId, competenceId, this);
-});
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endblock %}
 
-$(document).ready(function() {
-    $('.synt').each(function() {
-        var cellElement = $(this);
-        var realisationId = cellElement.data('realisation-id');
-        var competenceId = cellElement.data('competence-id');
-        
+    {% block javascript %}
+    <script>
+
+    $( function() {
+        $( "#logoutButton" ).hide();
+        $( "#loginButton" ).show();
+        $( "#loginForm" ).dialog({
+        autoOpen: false,
+        //   show: {
+        //     effect: "blind",
+        //     duration: 1000
+        //   },
+        //   hide: {
+        //     effect: "explode",
+        //     duration: 1000
+        //   }
+        });
+    
+        $( "#loginButton" ).on( "click", function() {
+        $( "#loginForm" ).dialog( "open" );
+        });
+    } );
+
+    $(function() {
+    $("#loginForm").submit(function(event) {
+        event.preventDefault();
+
+        var email = $("#email").val();
+        var password = $("#password").val();
+        console.log(password);
         $.ajax({
-            url: '?c=portfolio&t=checkRelation',
+            url: '?c=utilisateur&t=verifLogin',
             method: 'POST',
             data: {
-                realisationId: realisationId,
-                competenceId: competenceId
+                email: email,
+                password: password
             },
             success: function(response) {
-                respRelation=JSON.parse(response)
-                if (respRelation.status === 'exists') {
-                    cellElement.text("OK").addClass("validated");
+                respConnect = JSON.parse(response);
+                console.log(respConnect);
+                if (respConnect.status === 'success') {
+                    console.log('Connexion réussi');
+                    $("#loginForm").dialog("close");
+                    $("#loginButton").hide();
+                    $("#logoutButton").show();
+                } else {
+                    console.log('Erreur de connexion');
+                    $("#loginMessage").text(respConnect.message);
                 }
             },
             error: function(xhr, status, error) {
@@ -62,52 +105,101 @@ $(document).ready(function() {
             }
         });
     });
-});
+    $("#logoutButton").on("click", function() {
+        $.ajax({
+            url: '?c=utilisateur&t=logout',
+            success: function(response) {
+                respLogout = JSON.parse(response);
+                if (respLogout.status === 'success') {
+                    console.log('Déconnexion réussi');
+                    $("#loginButton").show();
+                    $("#logoutButton").hide();
+                } else {
+                    console.log('Erreur de déconnexion');
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error(error);
+            },
+        });
+    },
+);})
 
-function toggleCompetence(realisationId, competenceId, cellElement) {
-    const currentStatus = $(cellElement).text().trim();
-    if (currentStatus === "") {
-        $.ajax({
-            url: '?c=portfolio&t=addCompetence',
-            method: 'POST',
-            data: {
-                realisationId: realisationId,
-                competenceId: competenceId
-            },
-            success: function(response) {
-                respObj=JSON.parse(response);
-                if (respObj.status === 'success') {
-                    console.log('synthese ok');
-                    $(cellElement).text("OK").addClass("validated");
+
+
+
+            $('.synt').on('click', function() {
+                var realisationId = $(this).data('realisation-id');
+                var competenceId = $(this).data('competence-id');
+                toggleCompetence(realisationId, competenceId, this);
+            });
+
+    $(document).ready(function() {
+        $('.synt').each(function() {
+            var cellElement = $(this);
+            var realisationId = cellElement.data('realisation-id');
+            var competenceId = cellElement.data('competence-id');
+            
+            $.ajax({
+                url: '?c=portfolio&t=checkRelation',
+                method: 'POST',
+                data: {
+                    realisationId: realisationId,
+                    competenceId: competenceId
+                },
+                success: function(response) {
+                    respRelation=JSON.parse(response)
+                    if (respRelation.status === 'exists') {
+                        cellElement.text("OK").addClass("validated");
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error(error);
                 }
-            },
-            error: function(xhr, status, error) {
-                console.error(error);
-            }
+            });
         });
-    } else {
-        $.ajax({
-            url: '?c=portfolio&t=removeCompetence',
-            method: 'POST',
-            data: {
-                realisationId: realisationId,
-                competenceId: competenceId
-            },
-            success: function(response) {
-                respObj=JSON.parse(response);
-                if (respObj.status === 'success') {
-                    console.log('synthese ok');
-                    $(cellElement).empty().removeClass("validated");
+    });
+
+    function toggleCompetence(realisationId, competenceId, cellElement) {
+        const currentStatus = $(cellElement).text().trim();
+        if (currentStatus === "") {
+            $.ajax({
+                url: '?c=portfolio&t=addCompetence',
+                method: 'POST',
+                data: {
+                    realisationId: realisationId,
+                    competenceId: competenceId
+                },
+                success: function(response) {
+                    respObj=JSON.parse(response);
+                    if (respObj.status === 'success') {
+                        $(cellElement).text("OK").addClass("validated");
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error(error);
                 }
-            },
-            error: function(xhr, status, error) {
-                console.error(error);
-            }
-        });
+            });
+        } else {
+            $.ajax({
+                url: '?c=portfolio&t=removeCompetence',
+                method: 'POST',
+                data: {
+                    realisationId: realisationId,
+                    competenceId: competenceId
+                },
+                success: function(response) {
+                    respObj=JSON.parse(response);
+                    if (respObj.status === 'success') {
+                        $(cellElement).empty().removeClass("validated");
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error(error);
+                }
+            });
+        }
     }
-}
+    </script>
 
-
-</script>
-{% endblock %}
-
+    {% endblock %}

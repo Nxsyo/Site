@@ -26,5 +26,9 @@ class Controller
         ));
         $this->twig->addExtension(new \Twig\Extension\DebugExtension());
     }
+
+    protected function isLoggedIn() {
+        return isset($_SESSION['utilisateur_id']);
+    }
 }
 ?>  

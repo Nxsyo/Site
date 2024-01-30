@@ -7,6 +7,7 @@ use Candidat;
 use Centre;
 use Competence;
 use Realisation;
+use Utilisateur;
 
 class PortfolioController extends Controller
 {
@@ -16,8 +17,9 @@ class PortfolioController extends Controller
         $centres = $entityManager->getRepository(Centre::class)->findAll();
         $competences = $entityManager->getRepository(Competence::class)->findAll();
         $realisations = $entityManager->getRepository(Realisation::class)->findAll();
+        $utilisateurs = $entityManager->getRepository(Utilisateur::class)->findAll();
 
-        echo $this->twig->render('portfolio.html', ['candidats' => $candidats, 'centres' => $centres, 'competences' => $competences, 'realisations' => $realisations, 'params' => $params]); 
+        echo $this->twig->render('portfolio.html', ['utilisateurs' => $utilisateurs ,'candidats' => $candidats, 'centres' => $centres, 'competences' => $competences, 'realisations' => $realisations, 'params' => $params]); 
     }
 
     public function addCompetence($params) {
@@ -85,8 +87,6 @@ class PortfolioController extends Controller
             echo json_encode(['status' => 'not_exists']);
         }
     }
-    
-    
     
     
     }
