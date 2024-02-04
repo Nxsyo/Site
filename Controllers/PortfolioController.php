@@ -19,7 +19,17 @@ class PortfolioController extends Controller
         $realisations = $entityManager->getRepository(Realisation::class)->findAll();
         $utilisateurs = $entityManager->getRepository(Utilisateur::class)->findAll();
 
-        echo $this->twig->render('portfolio.html', ['utilisateurs' => $utilisateurs ,'candidats' => $candidats, 'centres' => $centres, 'competences' => $competences, 'realisations' => $realisations, 'params' => $params]); 
+        if ($this->isLoggedIn()) {
+
+            $utilisateur_prenom = $_SESSION['utilisateur_prenom'];
+            $utilisateur_nom = $_SESSION['utilisateur_nom'];
+
+            echo $this->twig->render('portfolio.html', ['competences' => $competences, 'utilisateur_prenom' => $utilisateur_prenom, 'utilisateur_nom' => $utilisateur_nom, 
+            'realisations' => $realisations, 'params' => $params]);
+        } else {
+            echo $this->twig->render('portfolio.html', ['competences' => $competences, 'realisations' => $realisations, 'params' => $params]);
+        }
+
     }
 
     public function addCompetence($params) {

@@ -1,6 +1,6 @@
     {% extends 'adminbase.html' %}
     {% block body %}
-        <h1>Portfolio de {{ utilisateurs_prenom }}</h1>
+        <h1 id="welcomeText">Portfolio de {{ utilisateur_prenom }} {{ utilisateur_nom }}</h1>
         <button id="loginButton">Se connecter</button>
         <button id="logoutButton" style="display: none;">Se déconnecter</button>
 
@@ -54,18 +54,11 @@
     <script>
 
     $( function() {
+        $( "#welcomeText" ).hide();
         $( "#logoutButton" ).hide();
         $( "#loginButton" ).show();
         $( "#loginForm" ).dialog({
         autoOpen: false,
-        //   show: {
-        //     effect: "blind",
-        //     duration: 1000
-        //   },
-        //   hide: {
-        //     effect: "explode",
-        //     duration: 1000
-        //   }
         });
     
         $( "#loginButton" ).on( "click", function() {
@@ -73,13 +66,34 @@
         });
     } );
 
+    $(document).ready(function() {
+    $.ajax({
+        url: '?c=utilisateur&t=checkLoginStatus',
+        method: 'GET',
+        success: function(response) {
+            respStatus = JSON.parse(response);
+            if (respStatus.isLoggedIn) {
+                $( "#welcomeText" ).show();
+                $("#loginButton").hide();
+                $("#logoutButton").show();
+            } else {
+                $( "#welcomeText" ).hide();
+                $("#loginButton").show();
+                $("#logoutButton").hide();
+            }
+        },
+        error: function(xhr, status, error) {
+            console.error(error);
+        }})
+    });
+
     $(function() {
     $("#loginForm").submit(function(event) {
         event.preventDefault();
 
         var email = $("#email").val();
         var password = $("#password").val();
-        console.log(password);
+
         $.ajax({
             url: '?c=utilisateur&t=verifLogin',
             method: 'POST',
@@ -95,6 +109,8 @@
                     $("#loginForm").dialog("close");
                     $("#loginButton").hide();
                     $("#logoutButton").show();
+
+                    location.reload();
                 } else {
                     console.log('Erreur de connexion');
                     $("#loginMessage").text(respConnect.message);
@@ -114,6 +130,8 @@
                     console.log('Déconnexion réussi');
                     $("#loginButton").show();
                     $("#logoutButton").hide();
+
+                    location.reload();
                 } else {
                     console.log('Erreur de déconnexion');
                 }

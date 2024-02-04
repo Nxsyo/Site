@@ -5,6 +5,7 @@ namespace Controllers;
 use Utilisateur;
 
 class UtilisateurController extends Controller {
+    
     public function verifLogin($params) { 
         $em = $params['em'];
 
@@ -42,6 +43,16 @@ class UtilisateurController extends Controller {
     session_destroy();
     echo json_encode(['status' => 'success']);
 }
+
+    public function checkLoginStatus()
+    {
+        if ($this->isLoggedIn()) {
+            echo json_encode(['isLoggedIn' => true]);
+        } else {
+            echo json_encode(['isLoggedIn' => false]);
+        }
+    }
+
 }
 
 ?>
