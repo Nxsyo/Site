@@ -7,9 +7,7 @@
 
         <form class="login-form" id="loginForm">
 
-            {% if error %}
-                <p class="error-message">{{ error }}</p>
-            {% endif %}
+            <p id="errorMessage" class="error-message">Identifiants invalides.</p>
         
             <label for="email">Email :</label>
             <input type="email" name="email" id="email" class="input-field" /><br />
@@ -19,8 +17,6 @@
         
             <input type="submit" value="Se connecter" class="submit-button" />
         </form>
-        
-        <div id="loginMessage"></div>
 
         <table id="Portfolio">
             <thead>
@@ -58,6 +54,7 @@
         $( "#welcomeText" ).hide();
         $( "#logoutButton" ).hide();
         $( "#loginButton" ).show();
+        $( "#errorMessage" ).hide();
         $( "#loginForm" ).dialog({
         autoOpen: false,
         });
@@ -104,7 +101,7 @@
             },
             success: function(response) {
                 respConnect = JSON.parse(response);
-                console.log(respConnect);
+
                 if (respConnect.status === 'success') {
                     console.log('Connexion réussi');
                     $("#loginForm").dialog("close");
@@ -114,7 +111,7 @@
                     location.reload();
                 } else {
                     console.log('Erreur de connexion');
-                    $("#loginMessage").text(respConnect.message);
+                    $("#errorMessage").show();
                 }
             },
             error: function(xhr, status, error) {

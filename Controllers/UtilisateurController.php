@@ -32,7 +32,6 @@ class UtilisateurController extends Controller {
             echo json_encode(['status' => 'success']);
 
         } else {
-            echo $this->twig->render('portfolio.html',['error' => 'Identifiants invalides']);
             echo json_encode(['status' => 'error']);
         }
 
