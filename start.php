@@ -23,10 +23,6 @@
     $entityManager = EntityManager::create($dbParams, $config);
     
 
-
-
-
-
     $class = "Controllers\\" . (isset($_GET['c'])? ucfirst($_GET['c']) . 'Controller' : 'IndexController');
     $target = isset($_GET['t']) ? $_GET['t'] : "index";
     $getParams = isset($_GET) ? $_GET : null;

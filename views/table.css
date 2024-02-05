@@ -1,3 +1,10 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    overflow: hidden;
+    /* background-color: #eef1f4; */
+}
+
 #Portfolio {
     width: 100%;
     border-collapse: collapse;
