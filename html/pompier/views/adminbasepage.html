@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Panel Admin{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css">
+    <link rel="stylesheet" href="http://195.154.118.169/sofyan/pompier/views/adminpage.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
+</head>
+
+<body>
+
+    <!-- Contenu spécifique de la page -->
+    {% block body %}
+    <a href="{{url}}start.php?c=user&t=logout" class="logout-btn">Déconnexion</a>
+    <header class="header-basepage">
+        <img src="http://195.154.118.169/sofyan/pompier/views/logo_nso.png" alt="Logo NSO" class="logo_nso" />
+        <h1>Bonjour {{ user_prenom }} !</h1>
+    </header>
+
+    <div class="card-container">
+        <div class="user-card">
+            <a href="{{url}}start.php?c=user&t=panelusers" class="card-link">Editer les utilisateurs</a>
+        </div>
+        <div class="engin-card">
+            <a href="{{url}}start.php?c=engin&t=panelengin" class="card-link">Editer les engins</a>
+        </div>
+        <div class="stats-card">
+            <a href="{{url}}start.php?c=stats&t=panelstats" class="card-link">Editer les stats</a>
+        </div>
+        <div class="galerie-card">
+            <a href="{{url}}start.php?c=galerie&t=panelgalerie" class="card-link">Editer la galerie</a>
+        </div>
+        <div class="materiel-card">
+            <a href="{{url}}start.php?c=materiel&t=panelmateriel" class="card-link">Editer le materiel</a>
+        </div>
+        <div class="personnel-card">
+            <a href="{{url}}start.php?c=personnel&t=panelpersonnel" class="card-link">Editer le personnel</a>
+        </div>
+        <div class="demande-card">
+            <a href="{{url}}start.php?c=demande&t=createdemande" class="card-link">Faire une demande d'entretien</a>
+        </div>
+        <div class="demande-list">
+            <a href="{{url}}start.php?c=demande&t=paneldemande" class="card-link">Afficher les demandes d'entretien</a>
+        </div>
+
+
+    </div>
+
+    {% endblock %}
+
+    <!-- Scripts JavaScript spécifiques de la page -->
+    {% block javascript %}{% endblock %}
+
+    <!-- Scripts JavaScript communs à toutes les pages -->
+    <script>
+        $(document).ready(function () {
+            $("#enginsTable").DataTable();
+        });
+
+    </script>
+
+</body>
+</html>

@@ -1,11 +1,17 @@
 {
-    "autoload" : {
-        "psr-4":  {
-            "Controllers\\":"Controllers/"
-        }
+  "autoload": {
+    "psr-4": {
+      "Controllers\\": "Controllers/"
     },
-    
-    "require": {
-        "twig/twig": "^3.0"
+    "psr-0": {
+      "": "src/"
     }
+  },
+  "require": {
+    "twig/twig": "^3.0",
+    "doctrine/orm": "^2.16",
+    "symfony/cache": "^6.3",
+    "doctrine/annotations": "^2.0",
+    "doctrine/dbal": "^3.7"
+  }
 }

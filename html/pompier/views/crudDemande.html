@@ -1,0 +1,41 @@
+{% extends 'adminbasepage.html' %}
+
+{% block body %}
+    <div class="top-page">
+        <a href="{{url}}start.php?c=user&t=admindisplay"><img width="225px"src="http://195.154.118.169/sofyan/pompier/views/logo_nso.png" class="logo-navbar"/></a>
+        <nav class="navbar">
+            <a href="{{url}}start.php?c=user&t=panelusers" class="nav-link">Utilisateurs</a>
+            <a href="{{url}}start.php?c=engin&t=panelengin" class="nav-link">Engins</a>
+            <a href="{{url}}start.php?c=stats&t=panelstats" class="nav-link">Statistiques</a>
+            <a href="{{url}}start.php?c=galerie&t=panelgalerie" class="nav-link">Galerie</a>
+        </nav>
+    </div>
+    <h1>Liste des Demandes</h1>
+<table id="demandesTable">
+    <thead>
+        <tr>
+            <th>Engin</th>
+            <th>Urgence</th>
+            <th>Commentaire</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for demande in demandes %}
+        <tr>
+            <td>{{ demande.engin.fullnom }}</td>
+            <td>{{ demande.urgence.niveau }}</td>
+            <td>{{ demande.coment }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+    {% block javascript %}
+        <script>
+            $(document).ready(function () {
+                $("#demandesTable").DataTable();
+            });
+        </script>
+    {% endblock %}
+{% endblock %}

@@ -1,27 +1,25 @@
-{% extends "base.html" %}
-
-{% block stylesheet %}
-{% endblock %}
-
+{% extends "base.html" %} {% block title %} Créer un utilisateur {% endblock %}
 {% block body %}
-    <div class="connection">
-        <form action="?c=user&t=insert" method="post">
-            <label>Nom :</label>
-            <input type="text" name="user_nom" placeholder="Nom">
-            <p></p>
-            <label>Prénom :</label>
-            <input type="text" name="user_prenom" placeholder="Prénom">
-            <p></p>
-            <label>Ville :</label>
-            <select name="ville_id" id="ville-select">
-                {% for ville in villes %}
-                    <option value= "{{ ville.id }}" > {{ ville.ville_nom }} </option>
-                {% endfor %}
-            </select>
-            <p></p>
-            <input type="submit" value="Envoyer">
-        </form>
-    </div>
+<style>
+  .centered-form {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    height: 50vh;
+    justify-content: center;
+    border-radius: 25px;
+  }
+</style>
+<h1>Créer un utilisateur</h1>
+<div class="centered-form">
+  <form method="post" action="start.php?c=user&t=insert">
+    <label for="nom">Nom :</label>
+    <input type="text" name="nom" id="nom" /><br />
+
+    <label for="prenom">Prénom :</label>
+    <input type="text" name="prenom" id="prenom" /><br />
+
+    <input type="submit" value="Créer l'utilisateur" />
+  </form>
+</div>
 {% endblock %}
-
-
