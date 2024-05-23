@@ -7,6 +7,13 @@
         <label for="lib">Réalisation :</label>
         <input type='text' name='lib' id='lib' /><br />
 
+        <label for="typerea">Type de Réalisation :</label>
+        <select name="typerea" id="typerea">
+            {% for typerea in typereas %}
+            <option value="{{ typerea.id }}">{{ typerea.environnement }}</option>
+            {% endfor %}
+        </select><br />
+
         <label for="competence">Compétence Validé :</label>
         <select name="competence" id="competence">
             {% for competence in competences %}

@@ -17,10 +17,13 @@ class Realisation
     private Localisation|null $localisation = null;
     #[ORM\Column(type: 'string')]
     private string $lib;
-
     #[ORM\ManyToMany(targetEntity: Competence::class, inversedBy:'realisations')]
     #[ORM\JoinTable(name: 'realisation_competence')]
     private $competences;
+    #[ManyToOne(targetEntity: Typerea::class)]
+    #[JoinColumn(name: 'typerea_id', referencedColumnName:'id')]
+    private Typerea|null $typerea = null;
+
     /**
      * Constructor
      */
@@ -121,5 +124,29 @@ class Realisation
     public function getCompetences()
     {
         return $this->competences;
+    }
+
+    /**
+     * Set typerea.
+     *
+     * @param \Typerea|null $typerea
+     *
+     * @return Realisation
+     */
+    public function setTyperea(\Typerea $typerea = null)
+    {
+        $this->typerea = $typerea;
+
+        return $this;
+    }
+
+    /**
+     * Get typerea.
+     *
+     * @return \Typerea|null
+     */
+    public function getTyperea()
+    {
+        return $this->typerea;
     }
 }

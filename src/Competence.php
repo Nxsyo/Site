@@ -1,7 +1,7 @@
 <?php
 
 use Doctrine\ORM\Mapping as ORM;
-use Doctrine\ORM\Mapping\ManyToOne;
+use Doctrine\Common\Collections\ArrayCollection;
 
 #[ORM\Entity]
 #[ORM\Table(name: 'competence')]
@@ -10,14 +10,17 @@ class Competence
     #[ORM\Id]
     #[ORM\Column(type:'integer')]
     #[ORM\GeneratedValue]
-    private int|null $id = null;
-    #[ORM\Column(type: 'string')]
+    private ?int $id = null;
+    
+    #[ORM\Column(type: 'string', length: 255)] // Ajustez la longueur selon vos besoins
     private string $short_lib;
-    #[ORM\Column(type: 'string')]
+    
+    #[ORM\Column(type: 'string', length: 1000)] // Ajustez la longueur selon vos besoins
     private string $long_lib;
     
-    #[ORM\ManyToMany(targetEntity: Realisation::class, mappedBy:'competences')]
+    #[ORM\ManyToMany(targetEntity: Realisation::class, mappedBy: 'competences')]
     private $realisations;
+
     /**
      * Constructor
      */

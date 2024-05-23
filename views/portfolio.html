@@ -21,33 +21,83 @@
         <table id="Portfolio">
             <thead>
                 <tr>
-                    <th>Réalisations</th>
+                    <th>Compétences</th>
                     {% for competence in competences %}
                     <td>{{ competence.shortlib }}</td>
                     {% endfor %}
                 </tr>
+                <tr>
                     <th></th>
                     {% for competence in competences %}
                     <td>{{ competence.longlib }}</td>
                     {% endfor %}
-                <tr>
+                </tr>
             </thead>
             <tbody>
+                <tr>
+                    <th>Réalisations</th>
+                    <td colspan="{{ competences|length }}">Réalisations en cours de Formation</td>
+                </tr>
                 {% for realisation in realisations %}
+                    {% if realisation.typerea.environnement == 'Scolaire' %}
+                        <tr>
+                            <td>{{ realisation.lib }}</td>
+                            {% for competence in competences %}
+                                <td class="synt" 
+                                    data-realisation-id="{{ realisation.id }}" 
+                                    data-competence-id="{{ competence.id }}" 
+                                    id="{{ competence.id }}-{{ realisation.id }}" 
+                                    data-relation="0">
+                                </td>
+                            {% endfor %}
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+                <tr>
+                    <th>Réalisations</th>
+                    <td colspan="{{ competences|length }}">Réalisations Professionnelles</td>
+                </tr>
+                {% for realisation in realisations %}
+                {% if realisation.typerea.environnement == 'Professionnel' %}
                     <tr>
                         <td>{{ realisation.lib }}</td>
                         {% for competence in competences %}
-                        <td class="synt" data-realisation-id="{{ realisation.id }}" data-competence-id="{{ competence.id }}" 
-                        id="{{ competence.id }}-{{ realisation.id }}" data-relation="0"></td>
-
+                            <td class="synt" 
+                                data-realisation-id="{{ realisation.id }}" 
+                                data-competence-id="{{ competence.id }}" 
+                                id="{{ competence.id }}-{{ realisation.id }}" 
+                                data-relation="0">
+                            </td>
                         {% endfor %}
                     </tr>
+                {% endif %}
                 {% endfor %}
+                <tr>
+                    <th>Réalisations</th>
+                    <td colspan="{{ competences|length }}">Réalisations Personnelles</td>
+                </tr>
+                {% for realisation in realisations %}
+                {% if realisation.typerea.environnement == 'Personnel' %}
+                    <tr>
+                        <td>{{ realisation.lib }}</td>
+                        {% for competence in competences %}
+                            <td class="synt" 
+                                data-realisation-id="{{ realisation.id }}" 
+                                data-competence-id="{{ competence.id }}" 
+                                id="{{ competence.id }}-{{ realisation.id }}" 
+                                data-relation="0">
+                            </td>
+                        {% endfor %}
+                    </tr>
+                {% endif %}
+                {% endfor %}
+
             </tbody>
         </table>
     {% endblock %}
 
     {% block javascript %}
+
     <script>
 
     $( function() {
@@ -63,6 +113,7 @@
         $( "#loginForm" ).dialog( "open" );
         });
     } );
+
 
     $(document).ready(function() {
     $.ajax({

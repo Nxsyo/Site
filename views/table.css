@@ -1,7 +1,7 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    overflow: hidden;
+    /* overflow: visible; */
     /* background-color: #eef1f4; */
 }
 
@@ -36,4 +36,9 @@ body {
 .validated {
     background-color: green;
     color: white;
+}
+
+.button-add-rea {
+    top : 0px;
+    text-decoration: none;
 }

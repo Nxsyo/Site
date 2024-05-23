@@ -5,12 +5,14 @@ namespace Controllers;
 use PDO;
 use Competence;
 use Realisation;
+use Typerea;
 
 class RealisationController extends Controller {
 
     public function panelrealisation($params) {
         $entityManager = $params["em"];
         $realisationRepository = $entityManager->getRepository(Realisation::class);
+        $TypereaRepository = $entityManager->getRepository('Realisation');
         $realisations = $realisationRepository->findAll();
         $competenceNames = [];
 
@@ -30,10 +32,11 @@ class RealisationController extends Controller {
 
     public function createRealisation($params) {
         $entityManager = $params["em"];
+        $typereas = $entityManager->getRepository(Typerea::class)->findAll();
         $competences = $entityManager->getRepository(Competence::class)->findAll();
 
 
-        echo $this->twig->render('createRealisation.html', ['competences' => $competences]);
+        echo $this->twig->render('createRealisation.html', ['competences' => $competences, 'typereas' => $typereas]);
     }
 
     public function insert($params) {
@@ -42,9 +45,12 @@ class RealisationController extends Controller {
         $lib = ($_POST['lib']);
         $competence_id = $_POST['competence'];
         $competences = $em->find(Competence::class, $competence_id);
+        $typerea_id = $_POST['typerea'];
+        $typereas = $em->find(Typerea::class, $typerea_id);
 
         $newRealisation = new Realisation();
         $newRealisation->setLib($lib);
+        $newRealisation->setTyperea($typereas);
         $newRealisation->addCompetence($competences);
 
 
@@ -68,12 +74,13 @@ class RealisationController extends Controller {
     public function editRealisation($params) {
         $entityManager = $params["em"];
         $competences = $entityManager->getRepository(Competence::class)->findAll();
+        $typereas = $entityManager->getRepository(Typerea::class)->findAll();
 
         $id = ($params['get']['id']);
         $em = $params['em'];
         $realisation = $em->find(Realisation::class, $id);
 
-        echo $this->twig->render('editRealisation.html', ['realisation' => $realisation, 'competences' => $competences]);
+        echo $this->twig->render('editRealisation.html', ['realisation' => $realisation, 'competences' => $competences, 'typereas' => $typereas]);
     }
 
     public function updateRealisation($params) {
@@ -95,6 +102,11 @@ class RealisationController extends Controller {
         foreach ($competences as $competence) {
             $realisation->addCompetence($competence);
         }
+
+        $typerea_id = $params['post']['typerea'];
+        $typerea = $em->find('Typerea', $typerea_id);
+
+        $realisation->setTyperea($typerea);
 
         $em->flush();
 
